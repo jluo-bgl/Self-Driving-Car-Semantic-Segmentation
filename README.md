@@ -1,20 +1,64 @@
 # Semantic Segmentation
-### Introduction
-In this project, you'll label the pixels of a road in images using a Fully Convolutional Network (FCN).
+
+Label the pixels of a road in images using a Fully Convolutional Network (FCN).
+
+## Fully Convolutional Networks for Semantic Segmentation
+
+[Paper Link From Berkeley](https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf)
+
+Semantic segmentation is the task of assigning meaning of part of an object. this can
+be done at the pixel level where we assign each pixel to a target class such as road,
+car, pedestrian, sign or any number of other classes.
+
+Which Fully convolutional networks can efficiently learn to make dense predictions.
+![fully_conv_networks_help_semantic_segmentation](./doc/fully_conv_networks_help_semantic_segmentation.png)
+
+Each layer of data in a convnet is a three-dimensional
+array of size h × w × d, where h and w are spatial dimensions,
+and d is the feature or channel dimension. The first
+layer is the image, with pixel size h × w, and d color channels.
+
+![heatmap_with_convolution_layers](./doc/heatmap_with_convolution_layers.png)
+Transforming fully connected layers into convolution
+layers enables a classification net to output a heatmap. Adding
+layers and a spatial loss (as in Figure 1) produces an efficient machine
+for end-to-end dense learning.
+
+### Knowing What and Where
+
+![combine_coarse_high_fine_low_layer_information](./doc/combine_coarse_high_fine_low_layer_information.png)
+
+![improves_detail](./doc/improves_detail.png)
+
+## Implementation in this Project
+
+### Overall Architecture
+![deconv_overall](./doc/deconv_overall.png)
+Image From: [http://cvlab.postech.ac.kr/research/deconvnet](http://cvlab.postech.ac.kr/research/deconvnet/)
 
 ### Setup
 ##### GPU
-`main.py` will check to make sure you are using GPU - if you don't have a GPU on your system, you can use AWS or another cloud computing platform.
+
+GPU is necessary for this project.
+
 ##### Frameworks and Packages
 Make sure you have the following is installed:
  - [Python 3](https://www.python.org/)
- - [TensorFlow](https://www.tensorflow.org/)
+ - [TensorFlow >= 1.0](https://www.tensorflow.org/)
  - [NumPy](http://www.numpy.org/)
  - [SciPy](https://www.scipy.org/)
+ 
 ##### Dataset
 Download the [Kitti Road dataset](http://www.cvlibs.net/datasets/kitti/eval_road.php) from [here](http://www.cvlibs.net/download.php?file=data_road.zip).  Extract the dataset in the `data` folder.  This will create the folder `data_road` with all the training a test images.
 
-### Start
+## Transfer Learning from [VGG16](https://arxiv.org/abs/1409.1556)
+
+##### Download VGG16 pretrained model
+Code will download vgg16 pretraned model under data folder. 
+
+##### Loading Model
+
+
 ##### Implement
 Implement the code in the `main.py` module indicated by the "TODO" comments.
 The comments indicated with "OPTIONAL" tag are not required to complete.

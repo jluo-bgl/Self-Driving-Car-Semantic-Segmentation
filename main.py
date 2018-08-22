@@ -17,7 +17,6 @@ if not tf.test.gpu_device_name():
 else:
     print('Default GPU Device: {}'.format(tf.test.gpu_device_name()))
 
-
 def load_vgg(sess, vgg_path):
     """
     Load Pretrained VGG Model into TensorFlow.
@@ -25,17 +24,22 @@ def load_vgg(sess, vgg_path):
     :param vgg_path: Path to vgg folder, containing "variables/" and "saved_model.pb"
     :return: Tuple of Tensors from VGG model (image_input, keep_prob, layer3_out, layer4_out, layer7_out)
     """
-    # TODO: Implement function
-    #   Use tf.saved_model.loader.load to load the model and weights
     vgg_tag = 'vgg16'
     vgg_input_tensor_name = 'image_input:0'
     vgg_keep_prob_tensor_name = 'keep_prob:0'
     vgg_layer3_out_tensor_name = 'layer3_out:0'
     vgg_layer4_out_tensor_name = 'layer4_out:0'
     vgg_layer7_out_tensor_name = 'layer7_out:0'
+
+    tf.saved_model.loader.load(sess, [vgg_tag], '')
+    graph = tf.get_default_graph()
+    image_input = graph.get_tensor_by_name(vgg_input_tensor_name)
+    keep = graph.get_tensor_by_name(vgg_keep_prob_tensor_name)
+    layer3 = tf.get_default_graph().get_tensor_by_name(vgg_layer3_out_tensor_name)
+    layer4 = tf.get_default_graph().get_tensor_by_name(vgg_layer4_out_tensor_name)
+    layer7 = tf.get_default_graph().get_tensor_by_name(vgg_layer7_out_tensor_name)
     
-    return None, None, None, None, None
-tests.test_load_vgg(load_vgg, tf)
+    return image_input, keep, layer3, layer4, layer7
 
 
 def layers(vgg_layer3_out, vgg_layer4_out, vgg_layer7_out, num_classes):
@@ -47,9 +51,44 @@ def layers(vgg_layer3_out, vgg_layer4_out, vgg_layer7_out, num_classes):
     :param num_classes: Number of classes to classify
     :return: The Tensor for the last layer of output
     """
-    # TODO: Implement function
-    return None
-tests.test_layers(layers)
+    layer7a_out = tf.layers.conv2d(vgg_layer7_out, num_classes, 1,
+                                   padding='same',
+                                   kernel_initializer=tf.random_normal_initializer(stddev=0.01),
+                                   kernel_regularizer=tf.contrib.layers.l2_regularizer(1e-3))
+    # upsample
+    layer4a_in1 = tf.layers.conv2d_transpose(layer7a_out, num_classes, 4,
+                                             strides=(2, 2),
+                                             padding='same',
+                                             kernel_initializer=tf.random_normal_initializer(stddev=0.01),
+                                             kernel_regularizer=tf.contrib.layers.l2_regularizer(1e-3))
+    # make sure the shapes are the same!
+    # 1x1 convolution of vgg layer 4
+    layer4a_in2 = tf.layers.conv2d(vgg_layer4_out, num_classes, 1,
+                                   padding='same',
+                                   kernel_initializer=tf.random_normal_initializer(stddev=0.01),
+                                   kernel_regularizer=tf.contrib.layers.l2_regularizer(1e-3))
+    # skip connection (element-wise addition)
+    layer4a_out = tf.add(layer4a_in1, layer4a_in2)
+    # upsample
+    layer3a_in1 = tf.layers.conv2d_transpose(layer4a_out, num_classes, 4,
+                                             strides=(2, 2),
+                                             padding='same',
+                                             kernel_initializer=tf.random_normal_initializer(stddev=0.01),
+                                             kernel_regularizer=tf.contrib.layers.l2_regularizer(1e-3))
+    # 1x1 convolution of vgg layer 3
+    layer3a_in2 = tf.layers.conv2d(vgg_layer3_out, num_classes, 1,
+                                   padding='same',
+                                   kernel_initializer=tf.random_normal_initializer(stddev=0.01),
+                                   kernel_regularizer=tf.contrib.layers.l2_regularizer(1e-3))
+    # skip connection (element-wise addition)
+    layer3a_out = tf.add(layer3a_in1, layer3a_in2)
+    # upsample
+    nn_last_layer = tf.layers.conv2d_transpose(layer3a_out, num_classes, 16,
+                                               strides=(8, 8),
+                                               padding='same',
+                                               kernel_initializer=tf.random_normal_initializer(stddev=0.01),
+                                               kernel_regularizer=tf.contrib.layers.l2_regularizer(1e-3))
+    return nn_last_layer
 
 
 def optimize(nn_last_layer, correct_label, learning_rate, num_classes):
@@ -63,7 +102,6 @@ def optimize(nn_last_layer, correct_label, learning_rate, num_classes):
     """
     # TODO: Implement function
     return None, None, None
-tests.test_optimize(optimize)
 
 
 def train_nn(sess, epochs, batch_size, get_batches_fn, train_op, cross_entropy_loss, input_image,
@@ -83,7 +121,6 @@ def train_nn(sess, epochs, batch_size, get_batches_fn, train_op, cross_entropy_l
     """
     # TODO: Implement function
     pass
-tests.test_train_nn(train_nn)
 
 
 def run():
@@ -95,6 +132,11 @@ def run():
 
     # Download pretrained vgg model
     helper.maybe_download_pretrained_vgg(data_dir)
+
+    tests.test_load_vgg(load_vgg, tf)
+    tests.test_layers(layers)
+    tests.test_optimize(optimize)
+    tests.test_train_nn(train_nn)
 
     # OPTIONAL: Train and Inference on the cityscapes dataset instead of the Kitti dataset.
     # You'll need a GPU with at least 10 teraFLOPS to train on.
