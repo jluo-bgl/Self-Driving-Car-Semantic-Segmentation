@@ -51,23 +51,98 @@ Make sure you have the following is installed:
 ##### Dataset
 Download the [Kitti Road dataset](http://www.cvlibs.net/datasets/kitti/eval_road.php) from [here](http://www.cvlibs.net/download.php?file=data_road.zip).  Extract the dataset in the `data` folder.  This will create the folder `data_road` with all the training a test images.
 
-## Transfer Learning from [VGG16](https://arxiv.org/abs/1409.1556)
+### Transfer Learning from [VGG16](https://arxiv.org/abs/1409.1556)
 
 ##### Download VGG16 pretrained model
 Code will download vgg16 pretraned model under data folder. 
 
 ##### Loading Model
+On section "Knowing what and where", the paper point out layer3, 4 and 7 are been used 
+for up sampling. 
+
+```python
+def load_vgg(sess, vgg_path):
+    """
+    Load Pretrained VGG Model into TensorFlow.
+    :param sess: TensorFlow Session
+    :param vgg_path: Path to vgg folder, containing "variables/" and "saved_model.pb"
+    :return: Tuple of Tensors from VGG model (image_input, keep_prob, layer3_out, layer4_out, layer7_out)
+    """
+    vgg_tag = 'vgg16'
+    vgg_input_tensor_name = 'image_input:0'
+    vgg_keep_prob_tensor_name = 'keep_prob:0'
+    vgg_layer3_out_tensor_name = 'layer3_out:0'
+    vgg_layer4_out_tensor_name = 'layer4_out:0'
+    vgg_layer7_out_tensor_name = 'layer7_out:0'
+
+    tf.saved_model.loader.load(sess, [vgg_tag], "./data/vgg")
+    graph = tf.get_default_graph()
+    image_input = graph.get_tensor_by_name(vgg_input_tensor_name)
+    keep = graph.get_tensor_by_name(vgg_keep_prob_tensor_name)
+    layer3 = tf.get_default_graph().get_tensor_by_name(vgg_layer3_out_tensor_name)
+    layer4 = tf.get_default_graph().get_tensor_by_name(vgg_layer4_out_tensor_name)
+    layer7 = tf.get_default_graph().get_tensor_by_name(vgg_layer7_out_tensor_name)
+    
+    return image_input, keep, layer3, layer4, layer7
+```
 
 
-##### Implement
-Implement the code in the `main.py` module indicated by the "TODO" comments.
-The comments indicated with "OPTIONAL" tag are not required to complete.
+###### Up Sampling and Skip Connections
+
+![skip_connections](./doc/skip_connections.png)
+
+```python
+def layers(vgg_layer3_out, vgg_layer4_out, vgg_layer7_out, num_classes):
+    """
+    Create the layers for a fully convolutional network.  Build skip-layers using the vgg layers.
+    :param vgg_layer3_out: TF Tensor for VGG Layer 3 output
+    :param vgg_layer4_out: TF Tensor for VGG Layer 4 output
+    :param vgg_layer7_out: TF Tensor for VGG Layer 7 output
+    :param num_classes: Number of classes to classify
+    :return: The Tensor for the last layer of output
+    """
+    layer7_1x1_conv = tf.layers.conv2d(vgg_layer7_out, num_classes, 1,
+                                   padding='same',
+                                   kernel_initializer=tf.random_normal_initializer(stddev=0.01),
+                                   kernel_regularizer=tf.contrib.layers.l2_regularizer(0.001))
+
+    layer7_up_sampling = tf.layers.conv2d_transpose(layer7_1x1_conv, num_classes, 4,
+                                             strides=(2, 2),
+                                             padding='same',
+                                             kernel_initializer=tf.random_normal_initializer(stddev=0.01),
+                                             kernel_regularizer=tf.contrib.layers.l2_regularizer(0.001))
+
+    layer4_skip_connection = tf.layers.conv2d(vgg_layer4_out, num_classes, 1,
+                                   padding='same',
+                                   kernel_initializer=tf.random_normal_initializer(stddev=0.01),
+                                   kernel_regularizer=tf.contrib.layers.l2_regularizer(0.001))
+
+    layer8 = tf.add(layer7_up_sampling, layer4_skip_connection)
+
+    layer8_up_sampling = tf.layers.conv2d_transpose(layer8, num_classes, 4,
+                                             strides=(2, 2),
+                                             padding='same',
+                                             kernel_initializer=tf.random_normal_initializer(stddev=0.01),
+                                             kernel_regularizer=tf.contrib.layers.l2_regularizer(0.001))
+    layer3_skip_connection = tf.layers.conv2d(vgg_layer3_out, num_classes, 1,
+                                   padding='same',
+                                   kernel_initializer=tf.random_normal_initializer(stddev=0.01),
+                                   kernel_regularizer=tf.contrib.layers.l2_regularizer(0.001))
+    layer9 = tf.add(layer8_up_sampling, layer3_skip_connection)
+
+    nn_last_layer = tf.layers.conv2d_transpose(layer9, num_classes, 16,
+                                               strides=(8, 8),
+                                               padding='same',
+                                               kernel_initializer=tf.random_normal_initializer(stddev=0.01),
+                                               kernel_regularizer=tf.contrib.layers.l2_regularizer(0.001))
+    return nn_last_layer
+```
+
 ##### Run
 Run the following command to run the project:
 ```
 python main.py
 ```
-**Note** If running this in Jupyter Notebook system messages, such as those regarding test status, may appear in the terminal rather than the notebook.
 
 ### Submission
 1. Ensure you've passed all the unit tests.
