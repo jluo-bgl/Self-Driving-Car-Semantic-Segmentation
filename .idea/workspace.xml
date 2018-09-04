@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8176be54-1966-4805-837f-29f8565aa0f2" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/video_generator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/videos/back_home_fast.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/videos/back_home_fast_output_detect.mp4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/helper.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,36 +20,76 @@
     <option name="PARALLEL_COMPILATION" value="true" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/CarND_Semantic_Segmentation$main.coverage" NAME="main Coverage Results" MODIFIED="1535844240464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CarND_Semantic_Segmentation$video_generator.coverage" NAME="video_generator Coverage Results" MODIFIED="1536025884512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CarND_Semantic_Segmentation$main.coverage" NAME="main Coverage Results" MODIFIED="1536027235751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="um_000000.png" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/runs/50/um_000000.png">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="507">
+              <caret line="42" column="52" lean-forward="true" selection-start-line="34" selection-start-column="4" selection-end-line="42" selection-end-column="52" />
+              <folding>
+                <element signature="e#23#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="um_000035.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/runs/65/um_000035.png">
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
-      <file leaf-file-name="um_000000.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/runs/45/um_000000.png">
+      <file leaf-file-name="um_000021.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/runs/65/um_000021.png">
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
-      <file leaf-file-name="um_000000.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/runs/40/um_000000.png">
+      <file leaf-file-name="um_000006.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/runs/65/um_000006.png">
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
-      <file leaf-file-name="um_000000.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/runs/35/um_000000.png">
+      <file leaf-file-name="um_000005.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/runs/65/um_000005.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file leaf-file-name="um_000004.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/runs/65/um_000004.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file leaf-file-name="um_000003.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/runs/65/um_000003.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file leaf-file-name="um_000002.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/runs/65/um_000002.png">
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file leaf-file-name="um_000001.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/runs/30/um_000001.png">
+        <entry file="file://$PROJECT_DIR$/runs/65/um_000001.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file leaf-file-name="um_000000.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/runs/65/um_000000.png">
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -67,6 +110,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/helper.py" />
+        <option value="$PROJECT_DIR$/video_generator.py" />
         <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
@@ -80,7 +125,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="877" />
@@ -457,8 +502,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -482,26 +525,15 @@
               <item name="CarND-Semantic-Segmentation" type="462c0819:PsiDirectoryNode" />
               <item name="data" type="462c0819:PsiDirectoryNode" />
               <item name="data_road" type="462c0819:PsiDirectoryNode" />
-              <item name="training" type="462c0819:PsiDirectoryNode" />
+              <item name="testing" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CarND-Semantic-Segmentation" type="b2602c69:ProjectViewProjectNode" />
               <item name="CarND-Semantic-Segmentation" type="462c0819:PsiDirectoryNode" />
               <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CarND-Semantic-Segmentation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CarND-Semantic-Segmentation" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="vgg" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CarND-Semantic-Segmentation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CarND-Semantic-Segmentation" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="vgg" type="462c0819:PsiDirectoryNode" />
-              <item name="variables" type="462c0819:PsiDirectoryNode" />
+              <item name="data_road" type="462c0819:PsiDirectoryNode" />
+              <item name="testing" type="462c0819:PsiDirectoryNode" />
+              <item name="image_2" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CarND-Semantic-Segmentation" type="b2602c69:ProjectViewProjectNode" />
@@ -511,38 +543,21 @@
             <path>
               <item name="CarND-Semantic-Segmentation" type="b2602c69:ProjectViewProjectNode" />
               <item name="CarND-Semantic-Segmentation" type="462c0819:PsiDirectoryNode" />
-              <item name="runs" type="462c0819:PsiDirectoryNode" />
-              <item name="30" type="462c0819:PsiDirectoryNode" />
+              <item name="videos" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CarND-Semantic-Segmentation" type="b2602c69:ProjectViewProjectNode" />
               <item name="CarND-Semantic-Segmentation" type="462c0819:PsiDirectoryNode" />
-              <item name="runs" type="462c0819:PsiDirectoryNode" />
-              <item name="35" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CarND-Semantic-Segmentation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CarND-Semantic-Segmentation" type="462c0819:PsiDirectoryNode" />
-              <item name="runs" type="462c0819:PsiDirectoryNode" />
-              <item name="40" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CarND-Semantic-Segmentation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CarND-Semantic-Segmentation" type="462c0819:PsiDirectoryNode" />
-              <item name="runs" type="462c0819:PsiDirectoryNode" />
-              <item name="45" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CarND-Semantic-Segmentation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CarND-Semantic-Segmentation" type="462c0819:PsiDirectoryNode" />
-              <item name="runs" type="462c0819:PsiDirectoryNode" />
-              <item name="50" type="462c0819:PsiDirectoryNode" />
+              <item name="videos" type="462c0819:PsiDirectoryNode" />
+              <item name="semantic" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -557,6 +572,9 @@
     <property name="settings.editor.selected.configurable" value="PyScientificConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/videos" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/data/model" />
     </key>
@@ -573,7 +591,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.main">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
@@ -615,6 +633,25 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="video_generator" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="CarND-Semantic-Segmentation" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/video_generator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -637,9 +674,14 @@
       <properties />
       <listeners />
     </configuration>
+    <list>
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.video_generator" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.video_generator" />
       </list>
     </recent_temporary>
   </component>
@@ -687,12 +729,14 @@
       <workItem from="1534916633612" duration="14293000" />
       <workItem from="1535329630571" duration="592000" />
       <workItem from="1535433591422" duration="34161000" />
-      <workItem from="1535751210681" duration="4138000" />
+      <workItem from="1535751210681" duration="17606000" />
+      <workItem from="1536038098014" duration="11000" />
+      <workItem from="1536045308338" duration="3568000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55764000" />
+    <option name="totallyTimeSpent" value="72811000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
@@ -706,12 +750,12 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32948717" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32948717" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32948717" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18383405" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18597998" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -723,11 +767,11 @@
       <window_info anchor="bottom" id="Messages" order="7" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32948717" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" x="0" y="0" width="310" height="677" id="Documentation" order="4" side_tool="true" weight="0.3297568" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32948717" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -746,171 +790,202 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>183</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
           <line>190</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/video_generator.py</url>
+          <line>42</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/helper.py</url>
+          <line>139</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/helper.py</url>
+          <line>136</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/helper.py</url>
+          <line>112</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="7" />
+      <option name="time" value="12" />
     </breakpoint-manager>
   </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>scipy.misc.imread(image_file)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/runs/40/um_000003.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/uu_000030.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/40/um_000004.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/uu_000025.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/40/um_000005.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/uu_000019.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/40/um_000006.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/uu_000013.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/40/um_000007.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/uu_000008.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/40/um_000008.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/uu_000004.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/40/um_000010.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/uu_000005.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/40/um_000011.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/uu_000001.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/40/um_000012.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/umm_000093.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/40/um_000013.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/umm_000092.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/40/um_000014.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/umm_000090.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/40/um_000015.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/umm_000088.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/40/um_000016.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/umm_000080.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/40/um_000017.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/umm_000074.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/40/um_000018.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/umm_000068.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/40/um_000020.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/umm_000061.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/40/um_000024.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/umm_000052.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/40/um_000025.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/umm_000050.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/40/um_000027.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/umm_000042.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/40/um_000039.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/umm_000033.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/40/um_000048.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/umm_000025.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/40/um_000053.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/umm_000024.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/40/um_000057.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/umm_000023.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/40/um_000066.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/umm_000022.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/40/um_000076.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/umm_000020.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/40/um_000085.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/umm_000018.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/40/um_000089.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/umm_000017.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/40/um_000094.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/umm_000016.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/40/umm_000005.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/umm_000015.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/40/umm_000012.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/umm_000014.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/40/umm_000017.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/umm_000012.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/45/um_000007.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/umm_000011.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/epoch 5/um_000001.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/umm_000010.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/epoch 5/um_000005.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/umm_000009.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/epoch 5/um_000006.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/umm_000004.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/epoch 5/um_000004.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/umm_000000.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/epoch 5/um_000003.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/um_000088.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/epoch 5/um_000002.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/um_000079.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/45/um_000002.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/um_000070.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/45/um_000001.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/um_000060.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/epoch_25/um_000000.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/um_000047.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/epoch_15/um_000018.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/um_000035.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/epoch_10/um_000000.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/um_000021.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/30/um_000002.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/um_000006.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/epoch 5/um_000000.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/um_000004.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/epoch_1/um_000000.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/um_000002.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/45/um_000000.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/um_000000.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/40/um_000000.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/um_000001.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/35/um_000000.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/um_000003.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/30/um_000001.png">
+    <entry file="file://$PROJECT_DIR$/runs/65/um_000005.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/runs/50/um_000000.png">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="42" column="52" lean-forward="true" selection-start-line="34" selection-start-column="4" selection-end-line="42" selection-end-column="52" />
+          <folding>
+            <element signature="e#23#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
