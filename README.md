@@ -143,3 +143,7 @@ Run the following command to run the project:
 ```
 python main.py
 ```
+
+## Result
+please view below video for the performance
+[![running result](./doc/result_youtube.png)](https://youtu.be/Su-yRhsDgoc)
